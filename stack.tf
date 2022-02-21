@@ -151,15 +151,15 @@ Resources:
             sudo cp -r Final_Project/code/buspassms/* /opt/lampp/htdocs
             sudo chmod 777 /opt/lampp/htdocs/includes/dbconnection.php
             sudo chmod 777 /opt/lampp/htdocs/admin/includes/dbconnection.php
-            sudo sed -i.bak 's/localhost/${endpoint}/g' /opt/lampp/htdocs/includes/dbconnection.php
-            sudo sed -i.bak 's/localhost/${endpoint}/g' /opt/lampp/htdocs/admin/includes/dbconnection.php
+            sudo sed -i.bak 's/localhost/aws_cloudformation_stack.network.template_body.endpoint/g' /opt/lampp/htdocs/includes/dbconnection.php
+            sudo sed -i.bak 's/localhost/aws_cloudformation_stack.network.template_body.endpoint/g' /opt/lampp/htdocs/admin/includes/dbconnection.php
             sudo chmod 777 /opt/lampp/etc/extra/httpd-xampp.conf
             sudo sed -i.bak 's/local/all granted/g' /opt/lampp/etc/extra/httpd-xampp.conf
             sudo chmod 755 /opt/lampp/etc/extra/httpd-xampp.conf
             sudo /opt/lampp/lampp restart
             sudo chmod 777 /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["verbose"] = "Amazon RDS";' >> /opt/lampp/phpmyadmin/config.inc.php
-            sudo echo '$cfg["Servers"][$i]["host"] = "${endpoint}";' >> /opt/lampp/phpmyadmin/config.inc.php
+            sudo echo '$cfg["Servers"][$i]["host"] = "aws_cloudformation_stack.network.template_body.endpoint";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["user"] = "admin";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["password"] = "ramana4u2021";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["port"] = "3306";' >> /opt/lampp/phpmyadmin/config.inc.php
