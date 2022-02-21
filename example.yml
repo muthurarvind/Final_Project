@@ -67,7 +67,7 @@ Resources:
       AllocatedStorage: 10
       Engine: MySQL
       MasterUsername: admin
-      MasterUserPassword: ramana4u2021
+      MasterUserPassword: arvind123
       DBInstanceClass: db.t2.micro
       DBName: buspassdb
       DBInstanceIdentifier: myrds
@@ -154,14 +154,14 @@ Resources:
             sudo echo '$cfg["Servers"][$i]["verbose"] = "Amazon RDS";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["host"] = "${endpoint}";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["user"] = "admin";' >> /opt/lampp/phpmyadmin/config.inc.php
-            sudo echo '$cfg["Servers"][$i]["password"] = "ramana4u2021";' >> /opt/lampp/phpmyadmin/config.inc.php
+            sudo echo '$cfg["Servers"][$i]["password"] = "arvind123";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["port"] = "3306";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["auth_type"] = "config";' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo echo '$cfg["Servers"][$i]["AllowNoPassword"] = true;' >> /opt/lampp/phpmyadmin/config.inc.php
             sudo chmod 400 /opt/lampp/phpmyadmin/config.inc.php
             sudo /opt/lampp/lampp restart
             sudo apt install mysql-client-core-8.0
-            sudo mysql -h ${endpoint} -u admin --password=ramana4u2021 buspassdb < /Final_Project/code/SQL\ File/buspassdb.sql
+            sudo mysql -h ${endpoint} -u admin --password=arvind123 buspassdb < /Final_Project/code/SQL\ File/buspassdb.sql
           - endpoint: !GetAtt RDSDBI32QQE.Endpoint.Address
     Metadata:
       'AWS::CloudFormation::Designer':
