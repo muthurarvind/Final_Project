@@ -168,8 +168,8 @@ Resources:
             sudo chmod 400 /opt/lampp/phpmyadmin/config.inc.php
             sudo /opt/lampp/lampp restart
             sudo apt install mysql-client-core-8.0
-            sudo mysql -h aws_cloudformation_stack.network.template_body.endpoint -u admin --password=ramana4u2021 buspassdb < /Final_Project/code/SQL\ File/buspassdb.sql
-          - endpoint: !GetAtt RDSDBI32QQE.Endpoint.Address
+            sudo mysql -h ${endpoint} -u admin --password=ramana4u2021 buspassdb < /Final_Project/code/SQL\ File/buspassdb.sql
+          - endpoint: aws_cloudformation_stack.network.template_body.!GetAtt RDSDBI32QQE.Endpoint.Address
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 355e45e0-9d36-49a7-8d8d-fc3b7f760b9c
