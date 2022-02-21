@@ -77,7 +77,7 @@ Resources:
       MasterUserPassword: ramana4u2021
       DBInstanceClass: db.t2.micro
       DBName: buspassdb
-      DBInstanceIdentifier: myrds
+      DBInstanceIdentifier: myrds1
       VPCSecurityGroups:
         - sg-0c51729257f00eea5
       EngineVersion: 5.7
